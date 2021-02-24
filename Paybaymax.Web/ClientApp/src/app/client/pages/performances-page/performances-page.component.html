@@ -1,0 +1,8 @@
+<div id="feedbacks-page__container" class="page-with-panel">
+  <pay-performances-list [performances]="$performanceReviews|async" (selectPerformance)="onPerformanceSelected($event)">
+  </pay-performances-list>
+  <div id="feedbacks-page__panel" class="panel">
+    <pay-create-feedback [disabled]="selectedPerformance===null" (submitFeedback)="onSubmitFeedback($event)">
+    </pay-create-feedback>
+  </div>
+</div>

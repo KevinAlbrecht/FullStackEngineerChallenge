@@ -1,0 +1,9 @@
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  width: 1024px;
+  margin: auto;
+
+  input.ng-invalid {
+    border-color: red;
+  }
+}

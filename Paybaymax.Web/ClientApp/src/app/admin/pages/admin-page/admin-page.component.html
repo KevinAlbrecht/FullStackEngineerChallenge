@@ -1,0 +1,44 @@
+<div class="page-with-panel">
+  <pay-performances-list [performances]="$performanceReviews|async" (selectPerformance)="onPerformanceSelected($event)"
+    (deselect)="onDeselectPerformance()">
+  </pay-performances-list>
+  <div class="panel">
+    <div class="actions">
+      <button (click)="currentPanel=0"
+        [ngClass]="{'selected':currentPanel===0}">{{'adminPage.createEditPerformanceAction'|translate}}</button>
+      <button (click)="currentPanel=1"
+        [ngClass]="{'selected':currentPanel===1}">{{'adminPage.assigneEmployeeAction'|translate}}</button>
+    </div>
+    <div [ngSwitch]="currentPanel" id="panel__container">
+      <ng-container *ngSwitchCase="0">
+        <h3>{{'adminPage.createEditPerformanceTitle'|translate}}</h3>
+        <pay-create-performance [selectedPerformance]="selectedPerformance"
+          (submitPerformance)="onSubmitPerformance($event)">
+        </pay-create-performance>
+      </ng-container>
+      <div *ngSwitchCase="1">
+        <h3>{{'adminPage.assigneEmployeeTitle'|translate}}</h3>
+        <div id="panel__assign-content">
+          <span>{{'adminPage.alreadyAssignedTitle'|translate}}</span>
+          <p *ngIf="!selectedPerformance ||selectedPerformance.assigned?.length===0">
+            {{'adminPage.noAssignedyet'|translate}}</p>
+          <ul>
+            <li *ngFor="let e of selectedPerformance?.assigned">{{e.fullName}}</li>
+          </ul>
+          <form (ngSubmit)="onSubmitAssign()" [formGroup]="assignEmployeeForm">
+            <div class="form-section">
+              <label>{{'adminPage.assignEmployeeLabel'|translate}}
+                <select name="toAssign" formControlName="toAssign">
+                  <option value=""></option>
+                  <option *ngFor="let e of assignableEmployees" [value]="e.employeeId.toLowerCase()">{{e.fullName}}
+                  </option>
+                </select>
+              </label>
+            </div>
+            <button type="submit" [disabled]="assignEmployeeForm.disabled">{{'adminPage.assignSubmit'|translate}}</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

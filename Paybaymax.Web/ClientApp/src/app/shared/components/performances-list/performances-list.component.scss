@@ -1,0 +1,32 @@
+:host {
+  flex: 1;
+}
+.performances__item {
+  margin: 10px;
+  padding: 10px;
+  &:hover,
+  &.selected {
+    background-color: #acffb042;
+  }
+  .performance__title {
+    font-size: 20px;
+    span {
+      &:last-of-type {
+        float: right;
+        font-size: 16px;
+      }
+    }
+  }
+  .performance__concerned-name {
+    font-size: 14px;
+    span {
+      text-decoration: underline;
+      &:first-of-type {
+        text-decoration: none;
+      }
+    }
+  }
+  .performance__description {
+    margin-top: 10px;
+  }
+}

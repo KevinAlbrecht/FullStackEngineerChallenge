@@ -1,0 +1,27 @@
+<div>
+  <h3>{{'performancesPage.giveFeedbackTitle'|translate}}</h3>
+  <form [formGroup]="feedbackForm" (ngSubmit)="submitWriteFeedback()">
+    <div class="form-section">
+      <span>{{'performancesPage.createFeedback.qualityLabel'|translate}}</span>
+      <pay-rating [disabled]="feedbackForm.disabled" [control]="feedbackForm.controls['quality']" controlName="quality">
+      </pay-rating>
+    </div>
+    <div class="form-section">
+      <span>{{'performancesPage.createFeedback.initiativeLabel'|translate}}</span>
+      <pay-rating [disabled]="feedbackForm.disabled" [control]="feedbackForm.controls['initiative']"
+        controlName="initiative">
+      </pay-rating>
+    </div>
+    <div class="form-section">
+      <span>{{'performancesPage.createFeedback.cooperationLabel'|translate}}</span>
+      <pay-rating [disabled]="feedbackForm.disabled" [control]="feedbackForm.controls['cooperation']"
+        controlName="cooperation"></pay-rating>
+    </div>
+    <div class="form-section">
+      <label>{{'performancesPage.createFeedback.commentLabel'|translate}}
+        <textarea name="comment" rows="10" cols="50" formControlName="comment"></textarea>
+      </label>
+    </div>
+    <button type="submit" [disabled]="feedbackForm.disabled">Submit</button>
+  </form>
+</div>

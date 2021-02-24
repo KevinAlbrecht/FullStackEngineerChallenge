@@ -1,0 +1,10 @@
+<div class="rating__container" (change)="updateInput($event)">
+  <div *ngFor="let rate of [1,2,3,4,5]; let i=index" class="rating-radio__container" [ngClass]="{'disabled':disabled}">
+    <label>
+      <span>{{rate}}</span>
+      <span class="radio" [ngClass]="{'checked':currentRate>=rate}"></span>
+      <input type="radio" [disabled]="disabled" [name]="controlName+'rating'" [value]='rate'>
+    </label>
+  </div>
+  <ng-content></ng-content>
+</div>

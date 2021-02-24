@@ -1,0 +1,15 @@
+<div id="performances__container">
+  <div class="actions">
+    <button (click)="deselect()">{{'common.deselect' |translate}}</button>
+  </div>
+  <span *ngIf="!hasPerformanceAssigned">You have not been assigned to give feedback for the moment.</span>
+  <div *ngFor="let performance of performanceItems" class="performances__item"
+    [ngClass]="{'selected':performance.isSelected}" (click)="select(performance)">
+    <div class="performance__title"><span>{{performance.title}}</span><span>{{performance.date|date}}</span></div>
+    <div class="performance__concerned-name">
+      <span>{{'performancesPage.listItem.employee' | translate}}</span>
+      <span>{{performance.concerned.fullName}}</span>
+    </div>
+    <div class="performance__description"><span>{{performance.description}}</span></div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+
+form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  width: 222px;
+  height: 150px;
+
+  label {
+    text-align: left;
+  }
+
+}
+
+#login-error__container {
+  color: red;
+  text-align: center;
+}

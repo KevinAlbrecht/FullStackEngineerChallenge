@@ -1,0 +1,27 @@
+<div>
+  <form [formGroup]="performanceForm" (ngSubmit)="submitWriteperformance()">
+    <div class="form-section">
+      <label>{{'adminPage.createPerformance.titleLabel'|translate}}
+        <input name="title" type="text" formControlName="title" />
+      </label>
+    </div>
+    <div class="form-section">
+      <label>{{'adminPage.createPerformance.performanceOfLabel'|translate}}
+        <select name="concerned" formControlName="concerned">
+          <option *ngFor="let e of employees" [value]="e.employeeId.toLowerCase()">{{e.fullName}}</option>
+        </select>
+      </label>
+    </div>
+    <div class="form-section">
+      <label>{{'common.date'|translate}}
+        <input name="date" type="date" formControlName="date" />
+      </label>
+    </div>
+    <div class="form-section">
+      <label>{{'common.description'|translate}}
+        <textarea name="description" rows="10" cols="50" formControlName="description"></textarea>
+      </label>
+    </div>
+    <button type="submit">{{(hasSelectedPerformance?'common.update':'common.create')|translate}}</button>
+  </form>
+</div>

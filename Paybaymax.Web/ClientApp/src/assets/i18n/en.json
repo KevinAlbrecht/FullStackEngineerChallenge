@@ -1,0 +1,49 @@
+{
+  "banner": {
+    "hello": "Hello {{firstName}}",
+    "adminLink": "Administration",
+    "dashboardLink": "Dashboard"
+  },
+  "home": {
+    "title": "Welcome to Paybaymax"
+  },
+  "login": {
+    "welcome": "Welcome to Paybaymax",
+    "failed": "Login failed, pleasy check your credentials"
+  },
+  "performancesPage": {
+    "panelTitle": "Panel",
+    "giveFeedbackTitle": "Give a feedback",
+    "listItem": {
+      "employee": "Employee: "
+    },
+    "createFeedback": {
+      "qualityLabel": "Code quality",
+      "initiativeLabel": "Initiative",
+      "cooperationLabel": "Cooperation",
+      "commentLabel": "Comment"
+    }
+  },
+  "adminPage": {
+    "createEditPerformanceAction": "Create or Edit performance",
+    "assigneEmployeeAction": "Assign employee",
+    "assigneEmployeeTitle": "Assign employee",
+    "createEditPerformanceTitle": "Create or Edit performance",
+    "alreadyAssignedTitle": "Already assigned employees:",
+    "assignEmployeeLabel": "Employee to assign",
+    "assignSubmit": "Assign",
+    "noAssignedyet": "No employee assigned yet.",
+    "createPerformance": {
+      "titleLabel": "Title",
+      "performanceOfLabel": "Employee's performance"
+    }
+  },
+  "common": {
+    "appName": "Paybaymax",
+    "update": "Update",
+    "create": "Create",
+    "deselect": "Deselect",
+    "date": "Date",
+    "description": "Description"
+  }
+}
